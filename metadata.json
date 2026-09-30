@@ -1,0 +1,6 @@
+{
+  "name": "ComicCraft – AI Comic Story Creator",
+  "description": "Turn your simple ideas into rich, multi-panel comic stories with characters, dialogues, sound effects, and AI visual scenes using Google Gemini.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-bangers {
+    font-family: 'Bangers', cursive, sans-serif;
+    letter-spacing: 0.05em;
+  }
+  .font-luckiest {
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+  }
+  .font-comic {
+    font-family: 'Comic Neue', cursive, sans-serif;
+  }
+
+  /* Comic Book Neo-Brutalist Box Shadows */
+  .comic-shadow {
+    box-shadow: 4px 4px 0px 0px #000000;
+  }
+  .comic-shadow-sm {
+    box-shadow: 2px 2px 0px 0px #000000;
+  }
+  .comic-shadow-lg {
+    box-shadow: 7px 7px 0px 0px #000000;
+  }
+  .comic-shadow-xl {
+    box-shadow: 10px 10px 0px 0px #000000;
+  }
+  .comic-shadow-primary {
+    box-shadow: 5px 5px 0px 0px #ea580c;
+  }
+  .comic-shadow-yellow {
+    box-shadow: 5px 5px 0px 0px #f59e0b;
+  }
+
+  /* Halftone Dot Background Patterns */
+  .bg-halftone-dots {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.12) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+  }
+  .bg-halftone-dots-amber {
+    background-image: radial-gradient(rgba(245, 158, 11, 0.25) 2px, transparent 2px);
+    background-size: 18px 18px;
+  }
+  .bg-halftone-dots-cyan {
+    background-image: radial-gradient(rgba(6, 182, 212, 0.25) 2px, transparent 2px);
+    background-size: 18px 18px;
+  }
+  .bg-halftone-dense {
+    background-image: radial-gradient(#000 15%, transparent 16%);
+    background-size: 8px 8px;
+  }
+  .bg-comic-grid {
+    background-size: 24px 24px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  }
+}
+
+/* Comic Speech Bubble Tails */
+.speech-bubble {
+  position: relative;
+}
+
+.speech-tail-bl::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 13px solid #000;
+}
+.speech-tail-bl::before {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 22px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #ffffff;
+  z-index: 10;
+}
+
+.speech-tail-br::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 13px solid #000;
+}
+.speech-tail-br::before {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  right: 22px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #ffffff;
+  z-index: 10;
+}
+
+/* Print Styling for Comic Book */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .comic-book-container {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .comic-panel {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}

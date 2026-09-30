@@ -1,0 +1,351 @@
+import { ComicStory } from '../types/comic';
+
+export const GENRE_PRESETS = [
+  { id: 'Sci-Fi & Mystery', name: 'Sci-Fi & Mystery', icon: '🚀', desc: 'Robots, alien signals, and futuristic secrets' },
+  { id: 'Superhero & Action', name: 'Superhero & Action', icon: '🦸', desc: 'Capes, epic battles, powers, and saving the city' },
+  { id: 'Comedy & Gag', name: 'Comedy & Gag', icon: '😂', desc: 'Silly misunderstandings, wacky pets, and punchlines' },
+  { id: 'Fantasy & Magic', name: 'Fantasy & Magic', icon: '🧙‍♂️', desc: 'Spells, mythical beasts, enchanted artifacts' },
+  { id: 'School & Youth', name: 'School & Youth', icon: '🎒', desc: 'Campus life, science clubs, friendships, exam panic' },
+  { id: 'Supernatural & Creepy', name: 'Supernatural & Horror', icon: '👻', desc: 'Spooky mysteries, friendly ghosts, urban legends' },
+  { id: 'Detective & Noir', name: 'Detective & Noir', icon: '🕵️', desc: 'Shadowy clues, cynical narrators, raining streets' },
+];
+
+export const VISUAL_STYLE_PRESETS = [
+  {
+    id: 'Classic Pop-Art Comic Book',
+    name: 'Classic Pop-Art (1970s Marvel/DC)',
+    desc: 'Bold ink lines, Ben-Day halftone dots, primary colors',
+    badge: 'Popular',
+    accent: 'bg-amber-400',
+  },
+  {
+    id: 'Modern Manga & Anime',
+    name: 'Modern Shonen Manga',
+    desc: 'Expressive eyes, dynamic speedlines, high drama',
+    badge: 'Manga',
+    accent: 'bg-rose-400',
+  },
+  {
+    id: 'Webtoon Vibrant',
+    name: 'Vibrant Webtoon',
+    desc: 'Rich digital colors, modern aesthetic, soft glowing highlights',
+    badge: 'Trending',
+    accent: 'bg-cyan-400',
+  },
+  {
+    id: 'Vintage Golden-Age Pulp (1950s)',
+    name: 'Golden-Age Vintage Pulp',
+    desc: 'Aged newsprint texture, retro halftone, sepia tones',
+    badge: 'Retro',
+    accent: 'bg-yellow-600',
+  },
+  {
+    id: 'Dark Noir Graphic Novel',
+    name: 'Dark Noir Inked Novel',
+    desc: 'Deep shadows, stark chiaroscuro, heavy ink silhouettes',
+    badge: 'Moody',
+    accent: 'bg-slate-800',
+  },
+  {
+    id: 'Whimsical Saturday Cartoon',
+    name: 'Saturday Morning Cartoon',
+    desc: 'Round playful shapes, bright candy palette, cartoon humor',
+    badge: 'Kids & Fun',
+    accent: 'bg-emerald-400',
+  },
+];
+
+export const TONE_PRESETS = [
+  'Fun & Exciting',
+  'Hilarious & Goofy',
+  'Mysterious & Suspenseful',
+  'Heroic & Epic',
+  'Heartwarming & Wholesome',
+];
+
+export const SOUND_EFFECT_PRESETS = [
+  { text: 'POW!', colorTheme: 'yellow', rotation: '-8deg' },
+  { text: 'BAM!', colorTheme: 'red', rotation: '12deg' },
+  { text: 'BZZZT!', colorTheme: 'cyan', rotation: '-15deg' },
+  { text: 'BOOM!', colorTheme: 'red', rotation: '6deg' },
+  { text: 'WHOOSH!', colorTheme: 'cyan', rotation: '-10deg' },
+  { text: 'CLICK!', colorTheme: 'orange', rotation: '4deg' },
+  { text: 'GASP!', colorTheme: 'purple', rotation: '-5deg' },
+  { text: 'ZAP!', colorTheme: 'yellow', rotation: '14deg' },
+  { text: 'CRASH!', colorTheme: 'red', rotation: '-12deg' },
+  { text: 'KRA-TOOM!', colorTheme: 'orange', rotation: '8deg' },
+  { text: 'SQUEAK!', colorTheme: 'yellow', rotation: '-6deg' },
+  { text: 'PING!', colorTheme: 'cyan', rotation: '10deg' },
+] as const;
+
+export const INSPIRATION_IDEAS = [
+  'Two college students discover a mysterious glowing robot hidden inside their chemistry classroom closet.',
+  'A chubby pet cat secretly runs a high-stakes espionage agency at 3 AM while its human is asleep.',
+  'A student finds an antique pencil that draws things that come to life for exactly ten minutes.',
+  'An alien spaceship lands in the middle of a school soccer game, asking for directions to the nearest taco truck.',
+  'A young street barista accidentally invents a secret coffee blend that grants customers temporary superpowers.',
+  'A time traveler gets stranded in the medieval ages and tries to explain Wi-Fi and smartphones to a bewildered knight.',
+  'Two competitive rivals team up to rescue a kidnapped golden retriever from a bumbling villain.',
+];
+
+export const SAMPLE_INITIAL_COMICS: ComicStory[] = [
+  {
+    id: 'sample-classroom-robot',
+    title: 'The Classroom Bot Mystery!',
+    issueNumber: '#1 Special Edition',
+    logline: 'Two college students discover a mysterious robot inside their classroom.',
+    synopsis: 'Late after hours in Hall 304, Maya and Leo hear a bizarre clanking sound from the supply closet. What begins as an innocent investigation reveals a forgotten experimental robot that boots up with a startling prediction!',
+    genre: 'Sci-Fi & Mystery',
+    visualStyle: 'Classic Pop-Art Comic Book',
+    tone: 'Fun & Exciting',
+    createdAt: '2026-09-29T20:00:00.000Z',
+    characters: [
+      {
+        id: 'c1',
+        name: 'Maya',
+        role: 'Curious Engineering Student',
+        appearance: 'Yellow hoodie, round glasses, messy dark bun, always carrying a screwdriver.',
+        colorHex: '#e11d48',
+      },
+      {
+        id: 'c2',
+        name: 'Leo',
+        role: 'Anxious Lab Partner',
+        appearance: 'Teal jacket, wide eyes, holding a stack of heavy physics textbooks.',
+        colorHex: '#0284c7',
+      },
+      {
+        id: 'c3',
+        name: 'Unit 7-B',
+        role: 'Mysterious Vintage Robot',
+        appearance: 'Brushed chrome chassis, glowing neon cyan visor, retro antennae, friendly grin LED display.',
+        colorHex: '#10b981',
+      },
+    ],
+    panels: [
+      {
+        panelNumber: 1,
+        title: 'The Suspicious Rattle',
+        sceneDescription: 'Late evening in the empty college lecture hall. Maya and Leo stand frozen near the blackboard as a metallic sound echoes from the supply closet.',
+        cameraAngle: 'Wide Cinematic Shot',
+        narration: 'Friday, 8:42 PM. Science Building 4. The campus is dead quiet... almost.',
+        soundEffect: {
+          text: 'CLANG!',
+          rotation: '-8deg',
+          colorTheme: 'yellow',
+        },
+        dialogues: [
+          {
+            id: 'd1-1',
+            speakerName: 'Leo',
+            text: 'Did you hear that?! Tell me that was just the campus radiator!',
+            bubbleType: 'whisper',
+            position: 'top-left',
+          },
+          {
+            id: 'd1-2',
+            speakerName: 'Maya',
+            text: 'Radiators don\'t tap in Morse code, Leo. Grab a flashlight!',
+            bubbleType: 'speech',
+            position: 'top-right',
+          },
+        ],
+        visualPrompt: 'Comic panel illustration of two young college students in a dimly lit university lecture hall staring at an old wooden supply cabinet. Classic 1970s pop art comic style, heavy black ink lines, halftone dot shading, dramatic rim lighting.',
+      },
+      {
+        panelNumber: 2,
+        title: 'The Closet Door Creaks Open',
+        sceneDescription: 'Maya swings open the creaky wooden closet door. A pair of glowing twin cyan circular robotic eyes suddenly blink open in the shadows.',
+        cameraAngle: 'Low Angle Close-up',
+        narration: 'Behind twenty years of dusty sports trophies sat something that definitely wasn’t on the syllabus.',
+        soundEffect: {
+          text: 'CREEEAK!',
+          rotation: '6deg',
+          colorTheme: 'cyan',
+        },
+        dialogues: [
+          {
+            id: 'd2-1',
+            speakerName: 'Maya',
+            text: 'Whoa... look at those copper conduits and vintage vacuum tubes!',
+            bubbleType: 'speech',
+            position: 'top-left',
+          },
+          {
+            id: 'd2-2',
+            speakerName: 'Leo',
+            text: 'MAYA DON\'T TOUCH IT!! It could be high voltage!!',
+            bubbleType: 'shout',
+            position: 'top-right',
+          },
+        ],
+        visualPrompt: 'Dramatic comic panel showing a wooden closet door opened wide, illuminating a retro-futuristic chrome robot inside whose cyan ocular visor lights up brightly. Pop art comic style, crosshatching and bold inked shadows.',
+      },
+      {
+        panelNumber: 3,
+        title: 'System Online!',
+        sceneDescription: 'The robot steps out gracefully onto the classroom tile, spinning its dual antenna. Holographic binary rings project into the room.',
+        cameraAngle: 'Dynamic Hero Shot',
+        narration: 'A low hum filled the room as century-old capacitors roared back to life.',
+        soundEffect: {
+          text: 'BZZZZT!',
+          rotation: '-12deg',
+          colorTheme: 'red',
+        },
+        dialogues: [
+          {
+            id: 'd3-1',
+            speakerName: 'Unit 7-B',
+            text: 'GREETINGS CADETS. CHRONO-CORE SYNCHRONIZED. COMMENCING ADVISORY PROTOCOL.',
+            bubbleType: 'speech',
+            position: 'center-top',
+          },
+          {
+            id: 'd3-2',
+            speakerName: 'Leo',
+            text: 'Did... did the cabinet just speak English?!',
+            bubbleType: 'thought',
+            position: 'bottom-left',
+          },
+        ],
+        visualPrompt: 'Dynamic comic panel of a chrome humanoid vintage robot standing triumphantly in the center of the lecture hall, emitting electric sparks and circular holographic light rings. Pop art style with vivid colors.',
+      },
+      {
+        panelNumber: 4,
+        title: 'The Dire Prediction',
+        sceneDescription: 'Unit 7-B leans forward pointing one metal finger at Leo\'s binder with a cheerful digital smiley on its screen.',
+        cameraAngle: 'Medium Double Shot',
+        narration: 'And then, the universe\'s most advanced forgotten automaton dropped its bombshell.',
+        soundEffect: {
+          text: 'PING!',
+          rotation: '10deg',
+          colorTheme: 'yellow',
+        },
+        dialogues: [
+          {
+            id: 'd4-1',
+            speakerName: 'Unit 7-B',
+            text: 'URGENT ALERT: DO NOT STUDY CHAPTER FOUR. PROFESSOR HIGGINS CHANGED TOMORROW\'S EXAM TO CHAPTER SEVEN.',
+            bubbleType: 'shout',
+            position: 'top-left',
+          },
+          {
+            id: 'd4-2',
+            speakerName: 'Maya',
+            text: 'Best. Lab. Discovery. EVER!!',
+            bubbleType: 'speech',
+            position: 'bottom-right',
+          },
+        ],
+        visualPrompt: 'Humorous comic panel showing the chrome robot giving a thumbs up while pointing at an exam sheet, Maya celebrating with fist in the air, and Leo staring in hilarious disbelief. Pop art comic style with Ben-Day dots.',
+      },
+    ],
+  },
+  {
+    id: 'sample-cat-crusader',
+    title: 'Barnaby: The Night Whisker',
+    issueNumber: '#4 Midnight Claws',
+    logline: 'A lazy housecat secretly fights neighborhood crime when the clock strikes midnight.',
+    synopsis: 'By day, Barnaby sleeps 18 hours on the radiator. By night, he straps on a miniature cape and defends the alleyway trash cans from Sly McRattigan’s cheese heist syndicate!',
+    genre: 'Superhero & Action',
+    visualStyle: 'Classic Pop-Art Comic Book',
+    tone: 'Hilarious & Goofy',
+    createdAt: '2026-09-29T19:30:00.000Z',
+    characters: [
+      {
+        id: 'bc1',
+        name: 'Barnaby (The Whisker)',
+        role: 'Feline Vigilante',
+        appearance: 'Chubby ginger tabby with a tiny mask and red bandana cape.',
+        colorHex: '#f97316',
+      },
+      {
+        id: 'bc2',
+        name: 'Sly McRattigan',
+        role: 'Rooftop Mob Boss',
+        appearance: 'Suave rat wearing a tiny bowler hat and holding a toothpick.',
+        colorHex: '#64748b',
+      },
+    ],
+    panels: [
+      {
+        panelNumber: 1,
+        title: 'The Transformation',
+        sceneDescription: 'Barnaby wakes up from the sofa as the cuckoo clock hits 12:00. He slips on his stealth collar.',
+        cameraAngle: 'Dramatic Close-Up',
+        narration: 'When the city sleeps, the claws come out.',
+        soundEffect: { text: 'YAWN!', rotation: '-5deg', colorTheme: 'yellow' },
+        dialogues: [
+          {
+            id: 'bd1',
+            speakerName: 'Barnaby',
+            text: 'Time to earn my tuna kibble.',
+            bubbleType: 'thought',
+            position: 'top-left',
+          },
+        ],
+        visualPrompt: 'Ginger tabby cat silhouetted against a full moon on a city roof, wearing a mini red cape. Comic pop-art style with bold comic halftone dots.',
+      },
+      {
+        panelNumber: 2,
+        title: 'The Cheddar Heist',
+        sceneDescription: 'Sly McRattigan and his rodent henchmen rolling an oversized wheel of gouda cheese through the alley.',
+        cameraAngle: 'Wide Alley Shot',
+        narration: 'The Deli district was under siege.',
+        soundEffect: { text: 'SQUEAK!', rotation: '8deg', colorTheme: 'orange' },
+        dialogues: [
+          {
+            id: 'bd2',
+            speakerName: 'Sly McRattigan',
+            text: 'Move it, boys! This cheese is worth forty crackers on the black market!',
+            bubbleType: 'shout',
+            position: 'top-left',
+          },
+        ],
+        visualPrompt: 'Alleyway at night where a rat with a bowler hat directs a group of mice rolling a giant cheese wheel. Inked comic graphics with dark noir shadows.',
+      },
+      {
+        panelNumber: 3,
+        title: 'From The Shadows!',
+        sceneDescription: 'Barnaby dives from a fire escape staircase with unsheathed claws and paws wide.',
+        cameraAngle: 'Extreme Dynamic Low Angle',
+        soundEffect: { text: 'POW!!', rotation: '-15deg', colorTheme: 'red' },
+        dialogues: [
+          {
+            id: 'bd3',
+            speakerName: 'Barnaby',
+            text: 'NOT ON MY WATCH, SLY!',
+            bubbleType: 'shout',
+            position: 'top-right',
+          },
+          {
+            id: 'bd4',
+            speakerName: 'Sly McRattigan',
+            text: 'CHEESE IT, IT\'S THE FUZZ-BALL!!',
+            bubbleType: 'shout',
+            position: 'bottom-left',
+          },
+        ],
+        visualPrompt: 'Action comic panel of a flying ginger cat pouncing onto frightened cartoon rats in a trash-strewn alleyway. Yellow burst comic explosion with POW sound effect.',
+      },
+      {
+        panelNumber: 4,
+        title: 'Justice (And A Nap)',
+        sceneDescription: 'Barnaby sits triumphantly on the recovered cheese wheel, licking his paw as police sirens wail in the distance.',
+        cameraAngle: 'Heroic Silhouette Shot',
+        narration: 'Another night saved. And right on time for 6:00 AM breakfast.',
+        soundEffect: { text: 'PURRRR...', rotation: '4deg', colorTheme: 'cyan' },
+        dialogues: [
+          {
+            id: 'bd5',
+            speakerName: 'Barnaby',
+            text: 'I demand salmon pate for this heroism.',
+            bubbleType: 'speech',
+            position: 'top-left',
+          },
+        ],
+        visualPrompt: 'Chubby ginger cat sitting proudly on a giant gouda cheese wheel in sunrise light, licking paw. Colorful comic book art.',
+      },
+    ],
+  },
+];
